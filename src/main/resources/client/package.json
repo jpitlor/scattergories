@@ -6,16 +6,21 @@
     "@atlaskit/avatar": "^20.4.2",
     "@atlaskit/avatar-group": "^8.5.1",
     "@atlaskit/button": "^16.1.1",
+    "@atlaskit/form": "^8.3.1",
+    "@atlaskit/icon": "^21.8.1",
     "@atlaskit/modal-dialog": "^12.0.1",
     "@atlaskit/progress-tracker": "^8.0.3",
     "@atlaskit/spinner": "^15.1.1",
     "@atlaskit/tabs": "^13.2.1",
+    "@atlaskit/textfield": "^5.1.1",
     "@atlaskit/toggle": "^12.2.2",
     "@craco/craco": "^6.2.0",
+    "@piticent123/gamekit-client": "^1.1.7",
     "@tailwindcss/typography": "^0.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",

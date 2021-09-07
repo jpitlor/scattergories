@@ -20,14 +20,14 @@ export default function Logo({
         items-center
         gap-2
         p-4
-        max-w-min
+        mb-8
         ${horizontal ? "flex-row" : "flex-col"}
         ${className}
       `}
     >
       {includeImage && <img className="w-48" src={logoImage} alt="" />}
       {includeText && (
-        <span className="text-3xl text-center">
+        <span className="text-3xl text-center text-neutral-20">
           SCATT<sub>E</sub>RGORI<sup>E</sup>S
         </span>
       )}
