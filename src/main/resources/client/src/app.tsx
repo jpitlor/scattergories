@@ -9,7 +9,7 @@ export default function App() {
       <Logo className="bg-red-300 pb-36" />
       <div className="container -mt-32 my-8 py-8 mx-auto rounded-md shadow-md bg-neutral-0">
         {false && <CreateProfile />}
-        {true && <JoinGame />}
+        {false && <JoinGame />}
         {true && <PlayGame />}
       </div>
     </div>
