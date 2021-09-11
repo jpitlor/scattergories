@@ -20,11 +20,6 @@ class Factories {
     fun gameFactory(): (String, UUID) -> ScattergoriesGame {
         return ::ScattergoriesGame
     }
-
-    @Bean
-    fun categoryListRepository(): CategoryListRepository {
-        return CategoryListRepository
-    }
 }
 
 fun main(args: Array<String>) {

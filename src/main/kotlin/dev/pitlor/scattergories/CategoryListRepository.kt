@@ -1,11 +1,21 @@
 package dev.pitlor.scattergories
 
-object CategoryListRepository {
-    fun getList(id: Int): List<String> {
-        return listOf()
-    }
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
+import javax.persistence.Convert
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
 
-    fun getLists(minId: Int, maxId: Int): List<List<String>> {
-        return listOf()
-    }
+@Entity
+data class CategoryList(
+    @Id @GeneratedValue
+    var id: Int = 0,
+
+    @Convert(converter = StringListConverter::class)
+    var categories: List<String> = listOf()
+)
+
+@Repository
+interface CategoryListRepository : JpaRepository<CategoryList, Int> {
 }

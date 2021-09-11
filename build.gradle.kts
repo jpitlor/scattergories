@@ -28,7 +28,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.5")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("dev.pitlor:gamekit-spring-boot-starter:1.1.6")
+    implementation("dev.pitlor:gamekit-spring-boot-starter:1.1.7")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:2.5.4")
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.4")
 }

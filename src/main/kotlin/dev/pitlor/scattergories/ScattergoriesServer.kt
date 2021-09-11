@@ -17,6 +17,9 @@ class ScattergoriesServer(
 {
     fun setCategoryList(gameCode: String, listId: Int) {
         val game = gameRepository.safeGetByCode(gameCode)
-        game.categories = categoryListRepository.getList(listId)
+        game.categories = categoryListRepository.findById(listId).let {
+            if (it.isEmpty) listOf()
+            else it.get().categories
+        }
     }
 }
