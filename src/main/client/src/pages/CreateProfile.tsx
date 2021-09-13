@@ -1,9 +1,9 @@
-import { asImage, getRandomName, useAvatar } from "@piticent123/gamekit-client";
+import { getRandomName, useAvatar } from "@piticent123/gamekit-client";
 import { FormEvent, useState } from "react";
 import Button, { ButtonGroup } from "@atlaskit/button";
-import RefreshIcon from "@atlaskit/icon/glyph/refresh";
 import Form, { Field, FormFooter } from "@atlaskit/form";
-import TextField from "@atlaskit/textfield";
+import RandomAvatar from "../components/form/RandomAvatar";
+import RandomNickname from "../components/form/RandomNickname";
 
 export default function CreateProfile() {
   const [avatar, getNewAvatar] = useAvatar();
@@ -25,17 +25,7 @@ export default function CreateProfile() {
         <form {...formProps} className="prose mx-auto">
           <h1 className="text-center">Make a Profile</h1>
           <Field name="avatar" label="Avatar" defaultValue={avatar} isRequired>
-            {({ fieldProps }) => (
-              <div>
-                <img src={asImage(avatar)} alt="" className="w-48 h-48" />
-                <Button
-                  onClick={getNewAvatar}
-                  iconBefore={<RefreshIcon label="refresh icon" size="small" />}
-                >
-                  New Avatar
-                </Button>
-              </div>
-            )}
+            {({ fieldProps }) => <RandomAvatar {...fieldProps} />}
           </Field>
           <Field
             name="nickname"
@@ -43,18 +33,7 @@ export default function CreateProfile() {
             defaultValue={nickname}
             isRequired
           >
-            {({ fieldProps }) => (
-              <div>
-                <TextField disabled {...fieldProps} />
-                <Button
-                  className="mt-4"
-                  onClick={getNewNickname}
-                  iconBefore={<RefreshIcon label="refresh icon" size="small" />}
-                >
-                  New Nickname
-                </Button>
-              </div>
-            )}
+            {({ fieldProps }) => <RandomNickname {...fieldProps} />}
           </Field>
           <FormFooter>
             <ButtonGroup>

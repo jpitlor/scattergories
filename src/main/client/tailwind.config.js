@@ -81,7 +81,12 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      margin: ["important"],
+    },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@neojp/tailwindcss-important-variant"),
+  ],
 };

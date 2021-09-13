@@ -8,9 +8,9 @@ export default function App() {
     <div className="w-full h-full absolute bg-neutral-20 overflow-y-auto">
       <Logo className="bg-red-300 pb-36" />
       <div className="container -mt-32 my-8 py-8 mx-auto rounded-md shadow-md bg-neutral-0">
-        {false && <CreateProfile />}
+        {true && <CreateProfile />}
         {false && <JoinGame />}
-        {true && <PlayGame />}
+        {false && <PlayGame />}
       </div>
     </div>
   );

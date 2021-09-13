@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@atlaskit/avatar": "^20.4.2",
     "@atlaskit/avatar-group": "^8.5.1",
@@ -16,13 +17,16 @@
     "@atlaskit/toggle": "^12.2.2",
     "@craco/craco": "^6.2.0",
     "@piticent123/gamekit-client": "^1.1.7",
+    "@reduxjs/toolkit": "^1.6.1",
     "@tailwindcss/typography": "^0.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.5",
     "react-scripts": "4.0.3",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
+    "@neojp/tailwindcss-important-variant": "^1.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
