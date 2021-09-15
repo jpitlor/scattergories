@@ -10,10 +10,10 @@ export default function RandomNickname({
   value,
   ...rest
 }: FieldProps<any>) {
-  const [nickname, setNickname] = useState(value);
+  const [nickname, setNickname] = useState(value || getRandomName());
   useEffect(() => {
     onChange(nickname);
-  }, [nickname]);
+  }, [onChange, nickname]);
 
   function getNewNickname() {
     setNickname(getRandomName());

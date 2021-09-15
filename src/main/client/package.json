@@ -16,7 +16,7 @@
     "@atlaskit/textfield": "^5.1.1",
     "@atlaskit/toggle": "^12.2.2",
     "@craco/craco": "^6.2.0",
-    "@piticent123/gamekit-client": "^1.1.7",
+    "@piticent123/gamekit-client": "^1.1.10",
     "@reduxjs/toolkit": "^1.6.1",
     "@tailwindcss/typography": "^0.4.1",
     "react": "^17.0.2",

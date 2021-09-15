@@ -82,7 +82,9 @@ module.exports = {
   },
   variants: {
     extend: {
+      display: ["important"],
       margin: ["important"],
+      textColor: ["important"],
     },
   },
   plugins: [

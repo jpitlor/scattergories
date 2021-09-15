@@ -3,6 +3,7 @@ import Button from "@atlaskit/button";
 import RefreshIcon from "@atlaskit/icon/glyph/refresh";
 import { FieldProps } from "@atlaskit/form";
 import { useEffect } from "react";
+import TextField from "@atlaskit/textfield";
 
 export default function RandomAvatar({
   value,
@@ -13,10 +14,11 @@ export default function RandomAvatar({
 
   useEffect(() => {
     onChange(avatar);
-  }, [avatar]);
+  }, [onChange, avatar]);
 
   return (
     <div className="flex flex-row items-center gap-8">
+      <TextField className="hidden!" {...rest} value={value} />
       <img
         src={asImage(value || avatar)}
         alt=""
@@ -26,7 +28,6 @@ export default function RandomAvatar({
       <Button
         onClick={getNewAvatar}
         iconBefore={<RefreshIcon label="refresh icon" size="small" />}
-        {...rest}
       >
         New Avatar
       </Button>

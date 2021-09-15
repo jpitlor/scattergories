@@ -1,38 +1,28 @@
-import { getRandomName, useAvatar } from "@piticent123/gamekit-client";
-import { FormEvent, useState } from "react";
 import Button, { ButtonGroup } from "@atlaskit/button";
 import Form, { Field, FormFooter } from "@atlaskit/form";
 import RandomAvatar from "../components/form/RandomAvatar";
 import RandomNickname from "../components/form/RandomNickname";
+import { useAppDispatch, actions } from "../data/store";
+import { Settings } from "@piticent123/gamekit-client/lib/types";
 
 export default function CreateProfile() {
-  const [avatar, getNewAvatar] = useAvatar();
-  const [nickname, setNickname] = useState(getRandomName());
+  const dispatch = useAppDispatch();
 
-  function getNewNickname() {
-    setNickname(getRandomName());
-  }
-
-  function onSubmit(e: FormEvent) {
-    e.preventDefault();
-
-    return false;
+  function onSubmit(formData: Partial<Settings>) {
+    console.log(formData);
+    dispatch(actions.saveSettings(formData) as any);
+    dispatch(actions.connectToServer() as any);
   }
 
   return (
-    <Form onSubmit={onSubmit}>
+    <Form<Partial<Settings>> onSubmit={onSubmit}>
       {({ formProps }) => (
         <form {...formProps} className="prose mx-auto">
           <h1 className="text-center">Make a Profile</h1>
-          <Field name="avatar" label="Avatar" defaultValue={avatar} isRequired>
+          <Field name="avatar" label="Avatar" isRequired>
             {({ fieldProps }) => <RandomAvatar {...fieldProps} />}
           </Field>
-          <Field
-            name="nickname"
-            label="Nickname"
-            defaultValue={nickname}
-            isRequired
-          >
+          <Field name="name" label="Nickname" isRequired>
             {({ fieldProps }) => <RandomNickname {...fieldProps} />}
           </Field>
           <FormFooter>
