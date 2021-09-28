@@ -13,6 +13,10 @@ const {
   createThunk,
 } = createGamekitSlice<AppState>();
 
+const startRound = createThunk("startRound", () => {});
+
+const submitGuess = createThunk<string>("submitGuess", ({ parameter }) => {})
+
 const { reducer: appReducer, actions: appActions } = createSlice({
   name: "app",
   initialState: {
