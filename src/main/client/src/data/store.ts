@@ -11,7 +11,7 @@ const {
   reducer: gamekitReducer,
   actions: gamekitActions,
   createThunk,
-} = createGamekitSlice<AppState>();
+} = createGamekitSlice();
 
 const startRound = createThunk("startRound", () => {});
 
@@ -23,11 +23,16 @@ const { reducer: appReducer, actions: appActions } = createSlice({
     page: Pages.CreateProfile,
   } as AppState,
   reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(gamekitActions.connectToServer.fulfilled, (state) => {
+  extraReducers: (builder) => builder
+    .addCase(gamekitActions.connectToServer.fulfilled, (state) => {
       state.page = Pages.JoinGame;
-    });
-  },
+    })
+    .addCase(gamekitActions.joinGame.fulfilled, (state) => {
+      state.page = Pages.PlayGame;
+    })
+    .addCase(gamekitActions.createGame.fulfilled, (state) => {
+      state.page = Pages.PlayGame;
+    }),
 });
 
 export const store = configureStore({

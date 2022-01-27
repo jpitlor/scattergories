@@ -3,7 +3,7 @@ import Select from "@atlaskit/select";
 
 interface Props {
   fieldProps: FieldProps<any>;
-  options: string[];
+  options: {label: string; value: string}[];
 }
 export default function SelectField({ fieldProps, options }: Props) {
   return <Select {...fieldProps} options={options} />;

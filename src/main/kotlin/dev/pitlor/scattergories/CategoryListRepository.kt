@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 @Entity
-data class CategoryList(
+class CategoryList(
     @Id @GeneratedValue
     var id: Int = 0,
 
